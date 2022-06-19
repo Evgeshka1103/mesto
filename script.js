@@ -1,4 +1,4 @@
-// Находим форму в DOM
+const profileEditButton = document.querySelector('.profile__edit-button');
 let formElement = // Воспользуйтесь методом querySelector()
 // Находим поля формы в DOM
 let nameInput = // Воспользуйтесь инструментом .querySelector()
