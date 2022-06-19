@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mesto</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./fonts/Inter/inter.css">
+    <link rel="stylesheet" href="./vendor/normalize.css">
+    <meta name="author" content="Евгения Соловьева">
+</head>
+
+<body class="page">
+
+    <header class="header">
+        <img class="header__logo" src="./images/logo.svg" alt="Логотип">
+        <hr class="header__line">
+        </hr>
+    </header>
+
+    <main>
+
+        <div class="profile">
+            <img class="avatar" src="./images/avatar.jpg" alt="Аватар пользователя">
+            <div class="profile__info">
+                <h1 class="profile__info-name">Жак-Ив Кусто</h1>
+                <p class="profile__info-about">Исследователь океана</p>
+                <button type="submit" class="profile__edit-button" title="Редактировать">
+                    <div class="profile__edit-button_icon-pen"></div>
+                </button>
+            </div>
+
+            <button type="submit" class="profile__button" title="Добавить">
+                <div class="profile__button_icon-plus"></div>
+            </button>
+
+        </div>
+
+        <div class="elements__block">
+
+            <div class="elements__card">
+                <img class="elements__mask-group" src="./images/karachaevsk.png" alt="Карачаевск">
+                <div class="elements__text">
+                    <h2 class="elements__sight">Карачаевск</h2>
+                    <button class="elements__like"></button>
+                </div>
+            </div>
+
+            <div class="elements__card">
+                <img class="elements__mask-group" src="./images/elbrus.png" alt="Гора Эльбрус">
+                <div class="elements__text">
+                    <h2 class="elements__sight">Гора Эльбрус</h2>
+                    <button class="elements__like"></button>
+                </div>
+            </div>
+
+            <div class="elements__card">
+                <img class="elements__mask-group" src="./images/dombai.png" alt="Домбай">
+                <div class="elements__text">
+                    <h2 class="elements__sight">Домбай</h2>
+                    <button class="elements__like"></button>
+                </div>
+            </div>
+
+            <div class="elements__card">
+                <img class="elements__mask-group" src="./images/gora-elbrus.png" alt="Гора Эльбрус">
+                <div class="elements__text">
+                    <h2 class="elements__sight">Гора Эльбрус</h2>
+                    <button class="elements__like"></button>
+                </div>
+            </div>
+
+            <div class="elements__card">
+                <img class="elements__mask-group" src="./images/dombai.png" alt="Домбай">
+                <div class="elements__text">
+                    <h2 class="elements__sight">Домбай</h2>
+                    <button class="elements__like"></button>
+                </div>
+            </div>
+
+            <div class="elements__card">
+                <img class="elements__mask-group" src="./images/cherkessiya.png" alt="Карачаево-Черкессия">
+                <div class="elements__text">
+                    <h2 class="elements__sight">Карачаево-Черкессия</h2>
+                    <button class="elements__like"></button>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <p class="footer__text">&copy; 2020 Mesto Russia</p>
+    </footer>
+
+<section class="popup popup__opened">
+<div class="popup__overlay"></div>
+
+<div class="popup__container">
+   <button class="popup__button-close popup__button-close_icon" name="close" type="button"></button>
+<form class="popup__form">
+    <p class="popup__edit-text">Редактировать профиль</p>
+    <input type="text" class="popup__form-name" name="name">
+    <hr class="popup__line">
+    <input type="text" class="popup__form-about" name="about">
+    <hr class="popup__line">
+
+    <button class="popup__button" type="submit">Сохранить</button>
+</form>
+
+</div>
+
+</section>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
