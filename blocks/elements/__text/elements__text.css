@@ -1,0 +1,10 @@
+.elements__text {
+    display: flex;
+    justify-content: space-between;
+    width: 282px;
+    background-color: white;
+    border-radius: 0 0 10px 10px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}

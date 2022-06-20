@@ -1,0 +1,9 @@
+.popup__form-name {
+    width: 358px;
+    margin: 54px auto 0;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.1;
+    border: none;
+}

@@ -1,0 +1,7 @@
+.popup__button-close {
+    display: flex;
+    position: absolute;
+    background-color: black;
+    background-color: transparent;
+    border: none;
+}
