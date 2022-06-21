@@ -1,7 +1,7 @@
 .profile__user{
     display: flex;
 }
-@media screen and (max-width: 620px){
+@media screen and (max-width: 767px){
     .profile__user{
         flex-direction: column;
         margin-bottom: 0;

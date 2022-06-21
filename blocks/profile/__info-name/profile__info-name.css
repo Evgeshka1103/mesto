@@ -18,7 +18,7 @@
         height: 26px;
        font-size: 27px;
        line-height: 1.22;
-       margin-left: 46px;
-       overflow: visible;
+      overflow: visible;
+      text-align: center;
 }
 }
