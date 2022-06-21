@@ -1,4 +1,5 @@
 let editButton = document.querySelector('.profile__edit-button');
+
 const popup = document.querySelector('.popup');
 const popupCloseButton = document.querySelector('.popup__button-close');
 
@@ -22,7 +23,7 @@ editButton.addEventListener('click', openPopup);
 function closePopup(event) {
     popup.classList.remove('popup__opened');
 }
-popupCloseButton.addEventListener('.click', closePopup);
+popupClose.addEventListener('.click', closePopup);
 
 
 

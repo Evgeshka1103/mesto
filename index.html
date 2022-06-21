@@ -21,20 +21,20 @@
     <main>
 
         <div class="profile">
-            <img class="profile__avatar" src="./images/avatar.jpg" alt="Аватар пользователя">
-            <div class="profile__info">
-                <h1 class="profile__info-name">Жак-Ив Кусто</h1>
-                <p class="profile__info-about">Исследователь океана</p>
-                <button type="submit" class="profile__edit-button" title="Редактировать">
-                    <div class="profile__edit-button_icon-pen"></div>
-                </button>
+            <div class="profile__user">
+                <img class="profile__avatar" src="./images/avatar.jpg" alt="Аватар пользователя">
+                <div class="profile__info">
+                    <h1 class="profile__info-name">Жак-Ив Кусто</h1>
+                    <button type="submit" class="profile__edit-button" title="Редактировать"></button>
+                    <p class="profile__info-about">Исследователь океана</p>
+
+                </div>
             </div>
 
-            <button type="submit" class="profile__button" title="Добавить">
-                <div class="profile__button_icon-plus"></div>
-            </button>
 
+            <button type="submit" class="profile__button" title="Добавить"></button>
         </div>
+
 
         <div class="elements">
 
@@ -94,24 +94,23 @@
         <p class="footer__text">&copy; 2020 Mesto Russia</p>
     </footer>
 
-<section class="popup popup__opened">
-<div class="popup__overlay"></div>
+    <section class="popup">
+        <div class="popup__container">
+            <button class="popup__button-close" name="close" type="button"></button>
+            
+            <form class="popup__form">
+                <p class="popup__edit-text">Редактировать профиль</p>
+                <input type="text" class="popup__form-name" name="name">
+                <hr class="popup__line">
+                <input type="text" class="popup__form-about" name="about">
+                <hr class="popup__line">
 
-<div class="popup__container">
-   <button class="popup__button-close popup__button-close_icon" name="close" type="button"></button>
-<form class="popup__form">
-    <p class="popup__edit-text">Редактировать профиль</p>
-    <input type="text" class="popup__form-name" name="name">
-    <hr class="popup__line">
-    <input type="text" class="popup__form-about" name="about">
-    <hr class="popup__line">
+                <button class="popup__button" type="submit">Сохранить</button>
+            </form>
 
-    <button class="popup__button" type="submit">Сохранить</button>
-</form>
+        </div>
 
-</div>
-
-</section>
+    </section>
 
     <script src="./scripts/script.js"></script>
 </body>

@@ -1,13 +1,13 @@
 .profile {
     display: flex;
-    position: relative;
-    max-width: 100%;
-    padding: 40px 200px 0;
+    justify-content: space-between;
+    padding: 40px 200px 52px;
 }
 @media screen and (max-width: 620px){
     .profile{
-        max-width: 100%;
-    padding: 40px 19px 0;
-    flex-direction: column;
+        
+        flex-direction: column;
+        padding-bottom: 36px;
+        padding: 42px 19px 36px;
     }
 }
