@@ -3,7 +3,8 @@
     width: 24px;
     height: 24px;
     border-width: 1px;
-    margin-top: 9px;
+    margin-top: 13px;
+    margin-left: 9px;
     background-image: url(../../../images/pen.svg);
     border-color: #ffffff;
     background-color: transparent;
@@ -17,8 +18,9 @@
         width: 18px;
         height: 18px;
         position: absolute;
-        margin-top: -57px;
-        background-size: 7.5px;
-        margin-left: 221px;
+        top: 10px;
+        padding: 0;
+        right: -27px;
+        margin: auto;
     }
 }

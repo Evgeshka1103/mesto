@@ -1,9 +1,9 @@
 .profile__info {
     display: grid;
     align-content: center;
-    grid-template-columns: 1fr 24px;
+    grid-template-columns: 1fr 34px;
     grid-template-rows: min-content min-content;
-    gap: 18px 10px;
+    gap: 17px 10px;
     grid-template-areas:
         "name button"
         "about .";
@@ -13,7 +13,7 @@
         display: flex;
         position: relative;
         flex-direction: column;
-       margin: 0 auto;
+        margin: 0 auto;
         row-gap: 14px;
         justify-content: center;
     }
