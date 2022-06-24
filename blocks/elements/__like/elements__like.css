@@ -12,3 +12,7 @@
     flex-shrink: 0;
     border: none;
 }
+
+.elements__like:hover{
+  opacity: 0.5;
+}

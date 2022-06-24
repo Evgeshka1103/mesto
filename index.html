@@ -18,7 +18,7 @@
 
     <main>
 
-        <div class="profile">
+        <section class="profile">
             <div class="profile__user">
                 <img class="profile__avatar" src="./images/avatar.jpg" alt="Аватар пользователя">
                 <div class="profile__info">
@@ -31,10 +31,10 @@
 
 
             <button type="submit" class="profile__button" title="Добавить"></button>
-        </div>
+        </section>
 
 
-        <div class="elements">
+        <section class="elements">
 
             <div class="elements__card">
                 <img class="elements__mask-group" src="./images/karachaevsk.png" alt="Карачаевск">
@@ -84,7 +84,7 @@
                 </div>
             </div>
 
-        </div>
+        </section>
 
     </main>
 
@@ -92,23 +92,20 @@
         <p class="footer__text">&copy; 2020 Mesto Russia</p>
     </footer>
 
-    <section class="popup">
+    <div class="popup">
         <div class="popup__container">
             <button class="popup__button-close" name="close" type="button"></button>
-            
-            <form class="popup__form">
-                <p class="popup__edit-text">Редактировать профиль</p>
-                <input type="text" class="popup__form-name" name="name">
-                <hr class="popup__line">
-                <input type="text" class="popup__form-about" name="about">
-                <hr class="popup__line">
 
+            <form class="popup__form">
+                <h3 class="popup__edit-text">Редактировать профиль</h3>
+                <input type="text" class="popup__form-name" name="name">
+                <input type="text" class="popup__form-about" name="about">
                 <button class="popup__button" type="submit">Сохранить</button>
             </form>
 
         </div>
 
-    </section>
+    </div>
 
     <script src="./scripts/script.js"></script>
 </body>

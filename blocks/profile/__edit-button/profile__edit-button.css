@@ -12,15 +12,14 @@
     background-repeat: no-repeat;
     background-position: center;
     align-self: center;
+    padding: 0;
 }
 @media screen and (max-width: 620px) {
     .profile__edit-button {
         width: 18px;
         height: 18px;
-        position: absolute;
-        top: 10px;
-        padding: 0;
-        right: -27px;
-        margin: auto;
+        background-size: 7.5px;
+        margin: -30px -30px 0px 195px;
+     
     }
 }
