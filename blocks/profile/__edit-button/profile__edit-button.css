@@ -14,12 +14,16 @@
     align-self: center;
     padding: 0;
 }
+.profile__edit-button:hover{
+    opacity: 0.5;
+}
+
 @media screen and (max-width: 620px) {
     .profile__edit-button {
         width: 18px;
-        height: 18px;
-        background-size: 7.5px;
-        margin: -30px -30px 0px 195px;
+    height: 18px;
+    background-size: 7.5px;
+   margin: 0 0 0 10px;
      
     }
 }

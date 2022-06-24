@@ -12,9 +12,8 @@
     .profile__info {
         display: flex;
         flex-wrap: wrap;
-        
         margin: 0 auto;
-        row-gap: 14px;
+        gap: 0;
         justify-content: center;
     }
 }
