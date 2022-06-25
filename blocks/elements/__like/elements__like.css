@@ -17,8 +17,8 @@
   opacity: 0.5;
 }
 
-.elements__like:active{
-  background-image: url(../../../images/like1.svg);
-  width: 22px;
-  opacity:1;
+.elements__like:active {
+  background-image: url(../../../images/Union.svg);
+  min-width: 22px;
+  opacity: 1;
 }
