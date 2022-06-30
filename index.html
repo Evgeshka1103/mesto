@@ -37,31 +37,31 @@
         <section class="elements">
 
             <div class="elements__card">
-                <img class="elements__mask-group" src="./images/karachaevsk.png" alt="Карачаевск">
+                <img class="elements__mask-group" src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg" alt="Архыз">
                 <div class="elements__text">
-                    <h2 class="elements__sight">Карачаевск</h2>
+                    <h2 class="elements__sight">Архыз</h2>
                     <button class="elements__like elements__like_active"></button>
                 </div>
             </div>
 
             <div class="elements__card">
-                <img class="elements__mask-group" src="./images/elbrus.png" alt="Гора Эльбрус">
+                <img class="elements__mask-group" src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg" alt="Челябинская область">
                 <div class="elements__text">
-                    <h2 class="elements__sight">Гора Эльбрус</h2>
+                    <h2 class="elements__sight">Челябинская область</h2>
                     <button class="elements__like elements__like_active"></button>
                 </div>
             </div>
 
             <div class="elements__card">
-                <img class="elements__mask-group" src="./images/dombai.png" alt="Домбай">
+                <img class="elements__mask-group" src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg" alt="Иваново">
                 <div class="elements__text">
-                    <h2 class="elements__sight">Домбай</h2>
+                    <h2 class="elements__sight">Иваново</h2>
                     <button class="elements__like elements__like_active"></button>
                 </div>
             </div>
 
             <div class="elements__card">
-                <img class="elements__mask-group" src="./images/gora-elbrus.png" alt="Гора Эльбрус">
+                <img class="elements__mask-group" src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg" alt="Гора Эльбрус">
                 <div class="elements__text">
                     <h2 class="elements__sight">Гора Эльбрус</h2>
                     <button class="elements__like elements__like_active"></button>
@@ -105,6 +105,19 @@
 
         </div>
 
+    </div>
+
+    <div class="popup popup_new-place">
+        <div class="popup__container">
+            <button class="popup__button-close" name="close" type="button"></button>
+
+            <form class="popup__form popup__form_new-place">
+                <h3 class="popup__edit-text">Новое место</h3>
+                <input type="text" class="popup__form-name" placeholder="Название" name="new-place">
+                <input type="url" class="popup__form-about" placeholder="Ссылка на картинку" name="link">
+                <button class="popup__button" type="submit">Создать</button> 
+                </form>   
+        </div>
     </div>
 
     <script src="./scripts/script.js"></script>
