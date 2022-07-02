@@ -36,53 +36,7 @@
 
         <section class="elements">
 
-            <div class="elements__card">
-                <img class="elements__mask-group" src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg" alt="Архыз">
-                <div class="elements__text">
-                    <h2 class="elements__sight">Архыз</h2>
-                    <button class="elements__like elements__like_active"></button>
-                </div>
-            </div>
-
-            <div class="elements__card">
-                <img class="elements__mask-group" src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg" alt="Челябинская область">
-                <div class="elements__text">
-                    <h2 class="elements__sight">Челябинская область</h2>
-                    <button class="elements__like elements__like_active"></button>
-                </div>
-            </div>
-
-            <div class="elements__card">
-                <img class="elements__mask-group" src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg" alt="Иваново">
-                <div class="elements__text">
-                    <h2 class="elements__sight">Иваново</h2>
-                    <button class="elements__like elements__like_active"></button>
-                </div>
-            </div>
-
-            <div class="elements__card">
-                <img class="elements__mask-group" src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg" alt="Гора Эльбрус">
-                <div class="elements__text">
-                    <h2 class="elements__sight">Гора Эльбрус</h2>
-                    <button class="elements__like elements__like_active"></button>
-                </div>
-            </div>
-
-            <div class="elements__card">
-                <img class="elements__mask-group" src="./images/dombai.png" alt="Домбай">
-                <div class="elements__text">
-                    <h2 class="elements__sight">Домбай</h2>
-                    <button class="elements__like elements__like_active"></button>
-                </div>
-            </div>
-
-            <div class="elements__card">
-                <img class="elements__mask-group" src="./images/cherkessiya.png" alt="Карачаево-Черкессия">
-                <div class="elements__text">
-                    <h2 class="elements__sight">Карачаево-Черкессия</h2>
-                    <button class="elements__like elements__like_active"></button>
-                </div>
-            </div>
+            
 
         </section>
 
@@ -92,11 +46,11 @@
         <p class="footer__text">&copy; 2020 Mesto Russia</p>
     </footer>
 
-    <div class="popup">
+    <div class="popup popup_profile popup_opened">
         <div class="popup__container">
             <button class="popup__button-close" name="close" type="button"></button>
 
-            <form class="popup__form">
+            <form class="popup__form popup__form_profile">
                 <h3 class="popup__edit-text">Редактировать профиль</h3>
                 <input type="text" class="popup__form-name" name="name">
                 <input type="text" class="popup__form-about" name="about">
@@ -107,7 +61,7 @@
 
     </div>
 
-    <div class="popup popup_new-place">
+    <div class="popup popup_new-place popup_opened">
         <div class="popup__container">
             <button class="popup__button-close" name="close" type="button"></button>
 
@@ -119,6 +73,18 @@
                 </form>   
         </div>
     </div>
+
+    <template class="elements_template">
+        #document
+        <div class="elements__card">
+            <img class="elements__mask-group" src=" " alt=" ">
+            <div class="elements__text">
+                <h2 class="elements__sight"></h2>
+                <button class="elements__like elements__like_active"></button>
+            </div>
+            <button class="elements__delete" type="button"></button>
+        </div>
+    </template>
 
     <script src="./scripts/script.js"></script>
 </body>
