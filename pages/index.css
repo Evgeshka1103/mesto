@@ -3,6 +3,7 @@
 @import url(../fonts/Inter/inter.css);
 
 @import url(../blocks/elements/elements.css);
+@import url(../blocks/elements/__delete/elements__delete.css);
 @import url(../blocks/elements/__card/elements__card.css);
 @import url(../blocks/elements/__like/elements__like.css);
 @import url(../blocks/elements/__mask-group/elements__mask-group.css);

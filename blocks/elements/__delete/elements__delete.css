@@ -9,7 +9,8 @@
     border-width: 0;
     cursor: pointer;
     position: absolute;
-    top: 20px;
-    right: 20px;
+    margin-top: 20px;
+    margin-left: 244px;
+    padding: 0;
 
 }

@@ -35,10 +35,62 @@
 
 
         <section class="elements">
+            <div class="elements__card">
+                <img class="elements__mask-group" src="https://images.unsplash.com/photo-1655317175286-c9ea784e5631?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="Испания">
+                <div class="elements__text">
+                    <h2 class="elements__sight">Испания</h2>
+                    <button class="elements__like elements__like_active"></button>
+                </div>
+                <button class="elements__delete" type="button"></button>
+            </div>
 
+            <div class="elements__card">
+                <img class="elements__mask-group" src="https://images.unsplash.com/photo-1655064605657-16a5b17545fc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=717&q=80" alt="Германия">
+                <div class="elements__text">
+                    <h2 class="elements__sight">Германия</h2>
+                    <button class="elements__like elements__like_active"></button>
+                </div>
+                <button class="elements__delete" type="button"></button>
+            </div>
+
+            <div class="elements__card">
+                <img class="elements__mask-group" src="https://images.unsplash.com/photo-1653479310695-b4f2948b3b2f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=765&q=80" alt="Италия">
+                <div class="elements__text">
+                    <h2 class="elements__sight">Италия</h2>
+                    <button class="elements__like elements__like_active"></button>
+                </div>
+                <button class="elements__delete" type="button"></button>
+            </div>
+
+
+            <div class="elements__card">
+                <img class="elements__mask-group" src="https://images.unsplash.com/photo-1653575625650-e3ca2e30afb9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=736&q=80" alt="Франция">
+                <div class="elements__text">
+                    <h2 class="elements__sight">Франция</h2>
+                    <button class="elements__like elements__like_active"></button>
+                </div>
+                <button class="elements__delete" type="button"></button>
+            </div>
+
+            <div class="elements__card">
+                <img class="elements__mask-group" src="https://images.unsplash.com/photo-1641210032600-049d8cd33f20?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80" alt="Венгрия">
+                <div class="elements__text">
+                    <h2 class="elements__sight">Венгрия</h2>
+                    <button class="elements__like elements__like_active"></button>
+                </div>
+                <button class="elements__delete" type="button"></button>
+            </div>
+
+            <div class="elements__card">
+                <img class="elements__mask-group" src="https://images.unsplash.com/photo-1653064029095-41aa4c1c8f7e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1449&q=80" alt="Дубай">
+                <div class="elements__text">
+                    <h2 class="elements__sight">Дубай</h2>
+                    <button class="elements__like elements__like_active"></button>
+                </div>
+                <button class="elements__delete" type="button"></button>
+            </div>
             
-
-        </section>
+ </section>
 
     </main>
 
@@ -46,9 +98,9 @@
         <p class="footer__text">&copy; 2020 Mesto Russia</p>
     </footer>
 
-    <div class="popup popup_profile popup_opened">
+    <div class="popup popup_profile">
         <div class="popup__container">
-            <button class="popup__button-close" name="close" type="button"></button>
+            <button class="popup__button-close popup__button-close_profile" name="close" type="button"></button>
 
             <form class="popup__form popup__form_profile">
                 <h3 class="popup__edit-text">Редактировать профиль</h3>
@@ -61,9 +113,9 @@
 
     </div>
 
-    <div class="popup popup_new-place popup_opened">
+    <div class="popup popup_new-place">
         <div class="popup__container">
-            <button class="popup__button-close" name="close" type="button"></button>
+            <button class="popup__button-close popup__button-close_new-place" name="close" type="button"></button>
 
             <form class="popup__form popup__form_new-place">
                 <h3 class="popup__edit-text">Новое место</h3>
@@ -74,10 +126,18 @@
         </div>
     </div>
 
-    <template class="elements_template">
-        #document
+    <div class="popup popup_elements-template">
+        <div class="popup__container popup__container-elements">
+            <img class="popup__image">
+            <h3 class="popup__caption"></h3>
+            <button class="popup__button-close popup__button-close_elements-template" name="close" type="button"></button>
+        </div>
+    </div>
+
+    <template class="template">
+        #document-fragment
         <div class="elements__card">
-            <img class="elements__mask-group" src=" " alt=" ">
+            <img class="elements__mask-group">
             <div class="elements__text">
                 <h2 class="elements__sight"></h2>
                 <button class="elements__like elements__like_active"></button>
