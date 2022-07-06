@@ -49,9 +49,10 @@ const createCard = (element) => {
   const buttonDelete = placeElement.querySelector('.elements__delete');//кнопка удаления карточки
 	buttonDelete.addEventListener('click', handleDelete);
   
-  const like = placeElement.querySelector('.elements__like');//кнопка лайка
-  like.addEventListener('click', handleLike);
+  const buttonlike = placeElement.querySelector('.elements__like');//кнопка лайка
+  buttonlike.addEventListener('click', handleLike);
   
+
   const buttonImage = placeElement.querySelector('.elements__mask-group');//кнопка изображения
   buttonImage.addEventListener('click', handlePreview);
   return placeElement;
@@ -60,6 +61,7 @@ const createCard = (element) => {
 function renderCard(item) {
   const card = createCard(item);
   elements.prepend(card);
+ 
 }
 //форма профиля
 function formSubmitHandler (evt) {
@@ -67,12 +69,14 @@ function formSubmitHandler (evt) {
   profileInfoName.textContent = nameInput.value; 
   profileInfoAbout.textContent = jobInput.value;
   closePopups(popupProfile);
+ 
 }
-function inputName(event) {
-  event.preventDefault()
+function inputName(evt) {
+  evt.preventDefault()
   nameInput.value = profileInfoName.textContent;
   jobInput.value = profileInfoAbout.textContent;
   openPopups(popupProfile);
+ 
 }
 
 //добавление карточки
@@ -85,12 +89,12 @@ function handleSubmit (evt) {
 
 //открытие попапа
 function openPopups(popup) {
-  popup.classList.add('popup_opened');
+  popup.classList.add('popup__opened');
 }
 
 //закрытие попапа
 function closePopups(popup) {
-  popup.classList.remove('popup_opened');
+  popup.classList.remove('popup__opened');
 }
 
 
@@ -110,21 +114,26 @@ function handleDelete(evt) {
 //лайк карточки
 function handleLike(evt) {
 	evt.target.classList.toggle('elements__like_active');
+  
 }
 
 
-// следим за событием submit
-profileEditButton.addEventListener('click', inputName);
+
+profileEditButton.addEventListener('click', () => openPopups(popupProfile));
 profileButton.addEventListener('click', () => openPopups(popupNewPlace));
+console.log(popupProfile);
+console.log(popupNewPlace);
+
+// следим за событием submit
 formProfile.addEventListener('submit', formSubmitHandler);
-formNewPlace.addEventListener('submit', formSubmitHandler);
+formNewPlace.addEventListener('submit', handleSubmit);
 
 
 popupButtonClose.forEach((button) => {
   button.addEventListener('click', (evt) => {
     const popup = evt.target.closest('.popup');
-    console.log(popup);
-    closePopups(popup)
+    closePopups(popup);
+    console.log(button);
   })
 });
 renderItems();
