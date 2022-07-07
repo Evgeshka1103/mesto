@@ -7,3 +7,10 @@
        
     }
 }
+
+@media screen and (max-width: 900px){
+    .profile__user{
+        flex-direction: column;
+       
+    }
+}

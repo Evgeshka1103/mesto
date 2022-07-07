@@ -2,7 +2,7 @@
 const profileEditButton = document.querySelector('.profile__edit-button'); //откр попап профиля
 const profileButton = document.querySelector('.profile__button'); //откр попап карточки
 //Кнопки попапа
-const popupButtonClose = document.querySelectorAll('.popup__button-close'); //закрыть попап
+const popupButtonCloseList = document.querySelectorAll('.popup__button-close'); //закрыть попап
 const popupButton = document.querySelectorAll('.popup__button');//сохранить(создать)
 //Попап
 const popupProfile = document.querySelector('.popup_profile');  //профиль
@@ -27,10 +27,10 @@ const elementsMaskGroup = document.querySelector('.elements__mask-group');
 const elementsSight = document.querySelector('.elements__sight');
 
 //Попап изображения
-const popupImage = popupPhotoTemplate.querySelector('.popup__image');//изображение в попапе 
+const popupImage= popupPhotoTemplate.querySelector('.popup__image');//изображение в попапе 
 const popupCaption = popupPhotoTemplate.querySelector('.popup__caption');//подпись изображения
 
-const elements = document.querySelector('.elements');// блок карточек
+const elementsContainer = document.querySelector('.elements');// блок карточек
 const template = document.querySelector('.template').content; //блок добавления карточек через js
 
 //добавляем карточки из массива
@@ -60,7 +60,7 @@ const createCard = (element) => {
 
 function renderCard(item) {
   const card = createCard(item);
-  elements.prepend(card);
+  elementsContainer.prepend(card);
  
 }
 //форма профиля
@@ -121,15 +121,14 @@ function handleLike(evt) {
 
 profileEditButton.addEventListener('click', () => openPopups(popupProfile));
 profileButton.addEventListener('click', () => openPopups(popupNewPlace));
-console.log(popupProfile);
-console.log(popupNewPlace);
+
 
 // следим за событием submit
 formProfile.addEventListener('submit', formSubmitHandler);
 formNewPlace.addEventListener('submit', handleSubmit);
 
 
-popupButtonClose.forEach((button) => {
+popupButtonCloseList.forEach((button) => {
   button.addEventListener('click', (evt) => {
     const popup = evt.target.closest('.popup');
     closePopups(popup);

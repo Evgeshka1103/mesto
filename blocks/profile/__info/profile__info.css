@@ -8,12 +8,14 @@
         "name button"
         "about .";
 }
-@media screen and (max-width: 620px) {
+
+@media screen and (max-width: 680px) {
     .profile__info {
         display: flex;
+        max-width: 320px;
         flex-wrap: wrap;
+        justify-content: center;
         margin: 0 auto;
         gap: 0;
-        justify-content: center;
     }
 }
