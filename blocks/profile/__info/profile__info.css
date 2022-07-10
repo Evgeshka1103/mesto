@@ -9,16 +9,16 @@
         "about .";
 }
 
-
-@media screen and (max-width: 680px){
+@media screen and (max-width: 660px) {
     .profile__info {
-        display: flex;
-        max-width: 320px;
-        flex-wrap: wrap;
-        justify-content: center;
-        margin: 0 auto;
+        max-width: 350px;
+    }
+}
+@media screen and (max-width: 500px) {
+    .profile__info {
+        max-width: 300px;
+        flex-direction: column;
+        margin-top: 27px;
         gap: 0;
     }
-    
 }
-

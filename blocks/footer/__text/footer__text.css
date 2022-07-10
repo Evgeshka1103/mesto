@@ -6,6 +6,12 @@
     color: #545454;
     margin: 0;
 }
+@media screen and (max-width: 785px){
+    .footer__text{
+        margin: 0 19px;
+    }
+}
+
 @media screen and (max-width: 620px){
     .footer__text{
         font-size: 14px;

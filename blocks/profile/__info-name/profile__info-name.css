@@ -13,13 +13,17 @@
     
     
 }
-@media screen and (max-width: 620px){
+
+@media screen and (max-width: 660px) {
     .profile__info-name{
-       max-width: 200px;
-       font-size: 27px;
-       line-height: 33px;
-       text-align: center;
-       
-       
+        font-size: 38px;
+    line-height: 1.1;
+    }
 }
+
+@media screen and (max-width: 500px) {
+    .profile__info-name{
+        font-size: 27px;
+
+    }
 }

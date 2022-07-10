@@ -4,7 +4,7 @@
     padding: 36px 0 51px;
     
 }
-@media screen and (max-width: 920px){
+@media screen and (max-width: 900px){
 .profile {
     margin: 0 19px;
 }
@@ -12,7 +12,14 @@
 
 @media screen and (max-width: 780px){
     .profile {
-        flex-direction: column;
+       
         padding-bottom: 36px;
     }
     }
+
+    @media screen and (max-width: 630px){
+        .profile {
+           flex-direction: column;
+            padding-bottom: 36px;
+        }
+        }
