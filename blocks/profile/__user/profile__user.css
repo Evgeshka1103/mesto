@@ -1,16 +1,15 @@
 .profile__user{
     display: flex;
 }
-@media screen and (max-width: 620px){
-    .profile__user{
-        flex-direction: column;
-       
-    }
+@media screen and (max-width: 920px){
+.profile__user {
+    margin-bottom: 36px;
+}
 }
 
-@media screen and (max-width: 900px){
-    .profile__user{
-        flex-direction: column;
-       
-    }
+@media screen and (max-width: 780px){
+.profile__user {
+    flex-direction: column;
+    margin-bottom: 0;
+}
 }

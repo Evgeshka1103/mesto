@@ -9,7 +9,8 @@
         "about .";
 }
 
-@media screen and (max-width: 680px) {
+
+@media screen and (max-width: 680px){
     .profile__info {
         display: flex;
         max-width: 320px;
@@ -18,4 +19,6 @@
         margin: 0 auto;
         gap: 0;
     }
+    
 }
+

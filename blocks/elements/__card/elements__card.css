@@ -4,8 +4,10 @@
     max-width: 282px;
     margin: 0;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 .elements__card:hover{
 opacity: 0.5;
 }
+
