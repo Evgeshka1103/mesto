@@ -32,7 +32,6 @@ const elementsContainer = document.querySelector('.elements');// блок кар
 const template = document.querySelector('.template').content; //блок добавления карточек через js 
 
 
-
 //добавляем карточки из массива 
 const renderItems = () => {
     initialCards.forEach(renderCard);
@@ -68,20 +67,23 @@ function renderCard(item) {
 }
 
 //форма профиля 
-function formSubmitHandler(evt) {
+function formSubmitHandlerProfile(evt) {
     evt.preventDefault();
 
     profileInfoName.textContent = nameInput.value;
     profileInfoAbout.textContent = jobInput.value;
     closePopups(popupProfile);
 }
+formProfile.addEventListener('submit', formSubmitHandlerProfile);
 
-function inputName(evt) {
-    evt.preventDefault()
+//заполняем поля ввода
+function inputName() {
+
     nameInput.value = profileInfoName.textContent;
     jobInput.value = profileInfoAbout.textContent;
     openPopups(popupProfile);
 }
+profileEditButton.addEventListener('click', inputName);
 
 //добавление карточки 
 function handleSubmit(evt) {
@@ -90,6 +92,7 @@ function handleSubmit(evt) {
     evt.target.reset();
     closePopups(popupNewPlace);
 }
+
 
 //открытие попапа 
 function openPopups(popup) {
@@ -119,12 +122,12 @@ function handleLike(evt) {
     evt.target.classList.toggle('elements__like_active');
 }
 
-profileEditButton.addEventListener('click', () => openPopups(popupProfile));
+
 profileButton.addEventListener('click', () => openPopups(popupNewPlace));
 
 // следим за событием submit 
-formProfile.addEventListener('submit', formSubmitHandler);
 formNewPlace.addEventListener('submit', handleSubmit);
+
 
 
 popupButtonCloseList.forEach((button) => {
