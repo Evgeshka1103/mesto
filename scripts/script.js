@@ -106,7 +106,7 @@ function closePopups(popup) {
 
 //предварительный просмотр 
 function handlePreview(evt) {
-    popupImage.src = evt.target.closest('.elements__mask-group').src;
+    popupImage.src = evt.target.closest('.elements__mask-group').url;
     popupImage.alt = evt.target.closest('.elements__card').querySelector('.elements__sight').textContent;
     popupCaption.textContent = evt.target.closest('.elements__card').querySelector('.elements__sight').textContent;
     openPopups(popupPhotoTemplate);

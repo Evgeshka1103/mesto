@@ -35,7 +35,7 @@
 
 
         <section class="elements">
-            
+
         </section>
 
     </main>
@@ -44,15 +44,23 @@
         <p class="footer__text">&copy; 2020 Mesto Russia</p>
     </footer>
 
-    
+
     <div class="popup popup_profile">
         <div class="popup__container">
             <button class="popup__button-close" name="close" type="button"></button>
 
             <form class="popup__form popup__form_profile">
                 <h3 class="popup__edit-text">Редактировать профиль</h3>
-                <input type="text" class="popup__form-name" placeholder="Имя" value="Жак-Ив Кусто" name="name">
-                <input type="text" class="popup__form-about" placeholder="О себе"  value="Исследователь океана" name="about">
+                <div>
+                    <input type="text" class="popup__form-name popup__form-name_type-error" placeholder="Имя" value="Жак-Ив Кусто" name="name" minlength="2" maxlength="40" required>
+                    <span class="popup_error"></span>
+                </div>
+
+                <div>
+                    <input type="text" class="popup__form-about popup__form-about_type-error" placeholder="О себе" value="Исследователь океана"
+                        name="about"  minlength="2" maxlength="200" required>
+                    <span class="popup_error"></span>
+                </div>
                 <button class="popup__button" type="submit">Сохранить</button>
             </form>
 
@@ -66,10 +74,17 @@
 
             <form class="popup__form popup__form_new-place">
                 <h3 class="popup__edit-text">Новое место</h3>
-                <input type="text" class="popup__form-name" placeholder="Название" name="new-place">
-                <input type="src" class="popup__form-about" placeholder="Ссылка на картинку" name="link">
-                <button class="popup__button" type="submit">Создать</button> 
-                </form>   
+                <div>
+                <input type="text" class="popup__form-name popup__form-name_type-error" placeholder="Название" name="new-place" minlength="2" maxlength="30" required> 
+            <span class="popup_error"></span>
+            </div>
+                
+            <div>
+                <input type="url" class="popup__form-about popup__form-about_type-error" placeholder="Ссылка на картинку" name="link" required>
+               <span class="popup_error"></span> 
+            </div>
+                <button class="popup__button" type="submit">Создать</button>
+            </form>
 
         </div>
     </div>
@@ -83,7 +98,7 @@
     </div>
 
     <template class="template">
-        
+
         <div class="elements__card">
             <img class="elements__mask-group" alt="Изображение">
             <div class="elements__text">
@@ -92,12 +107,13 @@
             </div>
             <button class="elements__delete" type="button"></button>
         </div>
-    
+
     </template>
 
     <script src="./scripts/card.js"></script>
+    <script src="./scripts/validate.js"></script>
     <script src="./scripts/script.js"></script>
-    
+
 </body>
 
 </html>
