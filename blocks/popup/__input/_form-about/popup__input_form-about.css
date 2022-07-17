@@ -1,4 +1,4 @@
-.popup__form-about {
+.popup__input_form-about {
     width: 358px;
     margin: 30px auto 0;
     font-style: normal;
@@ -10,7 +10,7 @@
     padding: 0 0 13px 0;
 }
 @media screen and (max-width: 620px) {
-    .popup__form-about{
+    .popup__input_form-about{
         width: 238px;
         
     }

@@ -1,27 +1,37 @@
-// включение валидации вызовом enableValidation
-// все настройки передаются при вызове
+formProfile.addEventListener('sumbit', sendForm)
+formProfile.addEventListener('input', handlerInputForm)
 
-enableValidation({
-    formSelector: '.popup__form',
-    inputSelector: '.popup__input',
-    submitButtonSelector: '.popup__button',
-    inactiveButtonClass: 'popup__button_disabled',
-    inputErrorClass: 'popup__input_type_error',
-    errorClass: 'popup__error_visible'
-});
-
-const formName = document.querySelector('.popup__form-name_type-error'); //для профиля 
-
-formAddCard.addEventListener('sumbit', sendForm)
+validateForm(formProfile)
 
 function sendForm(evt) {
-    evt.preventDefault();
+    evt.preventdefault();
 
     const form = evt.target;
-    if (form.checkValidity()) {
-        alert('Форма валидна')
-    } else {
-        alert('Форма не валидна')
-    }
 
+    if(form.checkValidity()) {
+        alert("Форма валидна")
+    } else {
+        alert("Форма не валидна")
+    }
+}
+
+function handlerInputForm(evt) {
+    const curentForm = evt.currentTarget;
+
+    validateForm(curentForm)
+    validateInput(evt.target)
+}
+
+function validateForm(form) {
+    const popupButton = form.querySelectorAll('.popup__button')
+
+    if(form.checkValidity()) {
+        popupButton.removeAtribute('disabled')
+        popupButton.classList.add('.popup__button_valid');
+        popupButton.classList.remove('.popup__button_invalid');
+    } else{
+        popupButton.setAtribute('disabled', true)
+        popupButton.classList.remove('.popup__button_valid');
+        popupButton.classList.add('.popup__button_invalid');
+    }
 }

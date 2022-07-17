@@ -12,8 +12,8 @@ const popupPhotoTemplate = document.querySelector('.popup_photo-template'); //п
 const formProfile = document.querySelector('.popup__form_profile'); //для профиля 
 const formNewPlace = document.querySelector('.popup__form_new-place'); //для создания карточки 
 //попап профиля 
-const nameInput = popupProfile.querySelector('.popup__form-name');
-const jobInput = popupProfile.querySelector('.popup__form-about');
+const nameInput = popupProfile.querySelector('.popup__input_form-name');
+const jobInput = popupProfile.querySelector('.popup__input_form-about');
 
 const profileInfoName = document.querySelector('.profile__info-name');
 const profileInfoAbout = document.querySelector('.profile__info-about');
@@ -93,7 +93,6 @@ function handleSubmit(evt) {
     closePopups(popupNewPlace);
 }
 
-
 //открытие попапа 
 function openPopups(popup) {
     popup.classList.add('popup__opened');
@@ -103,6 +102,7 @@ function openPopups(popup) {
 function closePopups(popup) {
     popup.classList.remove('popup__opened');
 }
+
 
 //предварительный просмотр 
 function handlePreview(evt) {
@@ -137,5 +137,28 @@ popupButtonCloseList.forEach((button) => {
     })
 
 });
+/*
+//Закрть по клику на overlay 
+popups.forEach((popup) => { 
+    popup.addEventListener('mousedown', (evt) => { 
+        overlayHandler(evt, popup)}); 
+  }) 
+  
+  //Следим за оверлей
+  function overlayHandler(evt, popup) { 
+    if (evt.target.classList.contains('popup_opened')) { 
+      closePopups(popup); 
+    } else if (evt.target.classList.contains('.popup__button-close')) { 
+      closePopups(popup); 
+    } 
+  } 
+  
+  //Закрытть по клику на ESC
+  function escapeHandler(evt) { 
+    if (evt.key === 'Escape') { 
+        const openedPopup = document.querySelector('.popup_opened'); 
+        closePopups(openedPopup); 
+    } 
+  } */
 
 renderItems(); 
