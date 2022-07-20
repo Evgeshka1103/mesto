@@ -2,10 +2,6 @@
     font-size: 12px;
     color: #ff0000;
     opacity: 0;
+    padding-top: 5px;
     transition: 0.3s;
 }
-
-.error:active{
-    opacity: 1;
-}
-

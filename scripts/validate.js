@@ -1,37 +1,67 @@
-formProfile.addEventListener('sumbit', sendForm)
-formProfile.addEventListener('input', handlerInputForm)
+const showInputError = (formElement, inputElement, errorMessage) => { 
+const errorElement = formElement.querySelector(`#${inputElement.id}-error`); 
+  inputElement.classList.add('popup__input_form-error'); 
+  errorElement.textContent = errorMessage; 
+  errorElement.classList.add('error__active'); 
+}; 
 
-validateForm(formProfile)
+const hideInputError = (formElement, inputElement) => { 
+const errorElement = formElement.querySelector(`#${inputElement.id}-error`); 
+  inputElement.classList.remove('popup__input_form-error'); 
+  errorElement.classList.remove('error__active'); 
+  errorElement.textContent = ''; 
+}; 
 
-function sendForm(evt) {
-    evt.preventdefault();
+const checkInputValidity = (formElement, inputElement) => { 
+  if (!inputElement.validity.valid) { 
+    showInputError(formElement, inputElement, inputElement.validationMessage); 
+  } else { 
+    hideInputError(formElement, inputElement); 
+  } 
+}; 
 
-    const form = evt.target;
+const setEventListeners = (formElement) => { 
+const inputList = Array.from(formElement.querySelectorAll('.popup__input')); 
+const buttonElement = formElement.querySelector('.popup__button'); 
+  toggleButtonState(inputList, buttonElement); 
 
-    if(form.checkValidity()) {
-        alert("Форма валидна")
-    } else {
-        alert("Форма не валидна")
-    }
-}
+  inputList.forEach((inputElement) => { 
+    inputElement.addEventListener('input', function () { 
+      checkInputValidity(formElement, inputElement); 
+      toggleButtonState(inputList, buttonElement); 
+    }); 
+ }); 
+}; 
 
-function handlerInputForm(evt) {
-    const curentForm = evt.currentTarget;
+const enableValidation = () => { 
+  const formList = Array.from(document.querySelectorAll('.popup__form')); 
+  formList.forEach((formElement) => { 
+    setEventListeners(formElement); 
+  }); 
+}; 
 
-    validateForm(curentForm)
-    validateInput(evt.target)
-}
+const hasInvalidInput = (inputList) => { 
+  return inputList.some((inputElement) => { 
+    return !inputElement.validity.valid; 
+  }) 
+};  
 
-function validateForm(form) {
-    const popupButton = form.querySelectorAll('.popup__button')
+const toggleButtonState = (inputList, buttonElement) => { 
+  if (hasInvalidInput(inputList)) { 
+    buttonElement.classList.add('popup__button_inactive'); 
+    buttonElement.setAttribute('disabled', true); 
 
-    if(form.checkValidity()) {
-        popupButton.removeAtribute('disabled')
-        popupButton.classList.add('.popup__button_valid');
-        popupButton.classList.remove('.popup__button_invalid');
-    } else{
-        popupButton.setAtribute('disabled', true)
-        popupButton.classList.remove('.popup__button_valid');
-        popupButton.classList.add('.popup__button_invalid');
-    }
-}
+  } else { 
+    buttonElement.classList.remove('popup__button_inactive'); 
+    buttonElement.removeAttribute('disabled', true); 
+  } 
+};  
+
+enableValidation({ 
+  formSelector: '.popup__form', 
+  inputSelector: '.popup__input', 
+  submitButtonSelector: '.popup__button', 
+  inactiveButtonClass: 'popup__button_inactive', 
+  inputErrorClass: 'error__active', 
+  errorClass: 'popup__input_form-error' 
+}); 

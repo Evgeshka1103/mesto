@@ -1,21 +1,19 @@
-.popup__button {
+.popup__button_inactive {
     width: 358px;
     height: 50px;
     margin: 30px auto 0;
-    background-color: black;
-    color: white;
+    background-color: #FFFFFF;;
+    color: rgba(0, 0, 0, 0.15);
     border-radius: 2px;
     padding: 0;
-    border: 0;
+    border: 1px solid rgba(0, 0, 0, 0.15);;
     font-size: 18px;
-line-height: 22px;
-}
-.popup__button:hover{
-    opacity: 0.8;
+    line-height: 22px;
+
 }
 
 @media screen and (max-width: 620px) {
-    .popup__button {
+    .popup__button_inactive {
         max-width: 238px;
         height: 46px;
         font-size: 14px;

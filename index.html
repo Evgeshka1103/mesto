@@ -51,17 +51,20 @@
 
             <form class="popup__form popup__form_profile" novalidate>
                 <h3 class="popup__edit-text">Редактировать профиль</h3>
-                <div>
-                    <input type="text" class="popup__input_form-name popup__input_type-error" placeholder="Имя" value="Жак-Ив Кусто" name="name" minlength="2" maxlength="40" required>
-                    <span class="error">Вы пропустили это поле</span>
+                <div class="popup__field">
+                    <input type="text" id="input-name"
+                        class="popup__input popup__input_form-name popup__input_form-error" placeholder="Имя"
+                        value="Жак-Ив Кусто" name="name" minlength="2" maxlength="40" required>
+                    <span id="input-name-error" class="error"></span>
                 </div>
 
-                <div>
-                    <input type="text" class="popup__input_form-about popup__input_type-error" placeholder="О себе" value="Исследователь океана"
-                        name="about"  minlength="2" maxlength="200" required>
-                    <span class="error"></span>
+                <div class="popup__field">
+                    <input type="text" id='input-about'
+                        class="popup__input popup__input_form-about popup__input_form-error" placeholder="О себе"
+                        value="Исследователь океана" name="about" minlength="2" maxlength="200" required>
+                    <span id="input-about-error" class="error"></span>
                 </div>
-                <button class="popup__button popup__button_valid" type="submit">Сохранить</button>
+                <button class="popup__button" type="submit">Сохранить</button>
             </form>
 
         </div>
@@ -74,16 +77,20 @@
 
             <form class="popup__form popup__form_new-place" novalidate>
                 <h3 class="popup__edit-text">Новое место</h3>
-                <div>
-                <input type="text" class="popup__input_form-name popup__input_type-error" placeholder="Название" name="new-place" minlength="2" maxlength="30" required> 
-            <span class="error"></span>
-            </div>
-                
-            <div>
-                <input type="url" class="popup__input_form-about popup__input_type-error" placeholder="Ссылка на картинку" name="link" required>
-               <span class="error"></span> 
-            </div>
-                <button class="popup__button popup__button_valid" type="submit">Создать</button>
+                <div class="popup__field">
+                    <input type="text" id="input-place"
+                        class="popup__input popup__input_form-name popup__input_form-error" placeholder="Название"
+                        name="new-place" minlength="2" maxlength="30" required>
+                    <span id="input-place-error" class="error"></span>
+                </div>
+
+                <div class="popup__field">
+                    <input type="url" id="input-link"
+                        class="popup__input popup__input_form-about popup__input_form-error"
+                        placeholder="Ссылка на картинку" name="link" required>
+                    <span id="input-link-error" class="error"></span>
+                </div>
+                <button class="popup__button" type="submit">Создать</button>
             </form>
 
         </div>
