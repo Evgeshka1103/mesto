@@ -23,6 +23,14 @@ const jobInput = popupProfile.querySelector('.popup__input_form-about');
 const profileInfoName = document.querySelector('.profile__info-name');
 const profileInfoAbout = document.querySelector('.profile__info-about');
 
+//Попап карточки  
+
+const placeInput = popupNewPlace.querySelector('.popup__input_form-name');
+const linkInput = popupNewPlace.querySelector('.popup__input_form-about');
+
+const elementsMaskGroup = document.querySelector('.elements__mask-group');
+const elementsSight = document.querySelector('.elements__sight');
+
 //Попап изображения 
 const popupImage = popupPhotoTemplate.querySelector('.popup__image');//изображение в попапе  
 const popupCaption = popupPhotoTemplate.querySelector('.popup__caption');//подпись изображения 
@@ -59,6 +67,16 @@ function renderCard(item) {
     elementsContainer.prepend(card);
 }
 
+//добавление карточки 
+function handleSubmit(evt) {
+    evt.preventDefault()
+    renderCard({ name: placeInput.value, link: linkInput.value });
+    evt.target.reset();
+
+    closePopups(popupNewPlace);
+}
+formNewPlace.addEventListener('submit', handleSubmit);
+
 //форма профиля 
 function formSubmitHandlerProfile(evt) {
     evt.preventDefault();
@@ -78,19 +96,6 @@ function inputName() {
 }
 profileEditButton.addEventListener('click', inputName);
 
-//добавление карточки 
-function handleSubmit(evt) {
-    evt.preventDefault()
-    renderCard({ name: placeInput.value, link: linkInput.value });
-    evt.target.reset();
-
-    const buttonElement = document.querySelector('.popup__button');
-    buttonElement.classList.add('popup__button_inactive');
-    buttonElement.setAttribute('disabled', true);
-
-    closePopups(popupNewPlace);
-}
-
 //открытие попапа 
 function openPopups(popup) {
     popup.classList.add('popup__opened');
@@ -105,9 +110,10 @@ function closePopups(popup) {
 
 //предварительный просмотр 
 function handlePreview(evt) {
-    popupImage.src = evt.target.closest('.elements__mask-group').url;
+    popupImage.src = evt.target.closest('.elements__mask-group').src;
     popupImage.alt = evt.target.closest('.elements__card').querySelector('.elements__sight').textContent;
     popupCaption.textContent = evt.target.closest('.elements__card').querySelector('.elements__sight').textContent;
+
     openPopups(popupPhotoTemplate);
 }
 
@@ -122,9 +128,6 @@ function handleLike(evt) {
 }
 
 profileButton.addEventListener('click', () => openPopups(popupNewPlace));
-
-// следим за событием submit 
-formNewPlace.addEventListener('submit', handleSubmit);
 
 popupButtonCloseList.forEach((button) => {
     button.addEventListener('click', (evt) => {
