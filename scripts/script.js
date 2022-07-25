@@ -1,10 +1,10 @@
 //Кнопки открытия попапов 
 const profileEditButton = document.querySelector('.profile__edit-button'); //откр попап профиля 
-const profileButton = document.querySelector('.profile__button'); //откр попап карточки 
+const button = document.querySelector('.profile__button'); //откр попап карточки 
 
 //Кнопки попапа 
 const popupButtonCloseList = document.querySelectorAll('.popup__button-close'); //закрыть попап 
-const popupButton = document.querySelectorAll('.popup__button');//сохранить(создать) 
+const popupButtonList = document.querySelectorAll('.popup__button');//сохранить(создать) 
 
 //Попап 
 const popups = document.querySelectorAll('.popup');
@@ -83,6 +83,7 @@ function formSubmitHandlerProfile(evt) {
 
     profileInfoName.textContent = nameInput.value;
     profileInfoAbout.textContent = jobInput.value;
+
     closePopups(popupProfile);
 }
 formProfile.addEventListener('submit', formSubmitHandlerProfile);
@@ -127,10 +128,11 @@ function handleLike(evt) {
     evt.target.classList.toggle('elements__like_active');
 }
 
-profileButton.addEventListener('click', () => openPopups(popupNewPlace));
+button.addEventListener('click', () => openPopups(popupNewPlace));
 
-popupButtonCloseList.forEach((button) => {
-    button.addEventListener('click', (evt) => {
+
+popupButtonCloseList.forEach((evt) => {
+    evt.addEventListener('click', (evt) => {
         const popup = evt.target.closest('.popup');
         closePopups(popup);
     })

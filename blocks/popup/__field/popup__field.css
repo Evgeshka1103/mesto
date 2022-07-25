@@ -3,3 +3,8 @@
     flex-direction: column;
     margin-bottom: 13px;
 }
+@media screen and (max-width: 620px) {
+    .popup__field{
+        margin-bottom: 0;
+    } 
+}
