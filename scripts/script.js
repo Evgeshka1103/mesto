@@ -1,6 +1,6 @@
 //Кнопки открытия попапов 
 const profileEditButton = document.querySelector('.profile__edit-button'); //откр попап профиля 
-const button = document.querySelector('.profile__button'); //откр попап карточки 
+const buttonPlace = document.querySelector('.profile__button'); //откр попап карточки 
 
 //Кнопки попапа 
 const popupButtonCloseList = document.querySelectorAll('.popup__button-close'); //закрыть попап 
@@ -73,7 +73,7 @@ function handleSubmit(evt) {
     renderCard({ name: placeInput.value, link: linkInput.value });
     evt.target.reset();
 
-    closePopups(popupNewPlace);
+  closePopups(popupNewPlace);
 }
 formNewPlace.addEventListener('submit', handleSubmit);
 
@@ -101,7 +101,7 @@ profileEditButton.addEventListener('click', inputName);
 function openPopups(popup) {
     popup.classList.add('popup__opened');
     document.addEventListener('keydown', escapeHandler);
-}
+} 
 
 //закрытие попапа 
 function closePopups(popup) {
@@ -128,7 +128,7 @@ function handleLike(evt) {
     evt.target.classList.toggle('elements__like_active');
 }
 
-button.addEventListener('click', () => openPopups(popupNewPlace));
+buttonPlace.addEventListener('click', () => openPopups(popupNewPlace));
 
 
 popupButtonCloseList.forEach((evt) => {
