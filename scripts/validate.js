@@ -4,7 +4,7 @@ const showInputError = (formElement, inputElement, errorMessage, settings) => {
     errorElement.textContent = errorMessage; 
     errorElement.classList.add(settings.inputErrorClass); 
   }; 
-  
+
   const hideInputError = (formElement, inputElement, settings) => { 
   const errorElement = formElement.querySelector(`#${inputElement.id}-error`); 
     inputElement.classList.remove(settings.errorClass); 
@@ -56,11 +56,11 @@ const showInputError = (formElement, inputElement, errorMessage, settings) => {
     }); 
   }; 
 
-  enableValidation ({ 
+  const settings = { 
     formSelector: '.popup__form', 
     inputSelector: '.popup__input', 
     submitButtonSelector: '.popup__button', 
     inactiveButtonClass: 'popup__button_inactive', 
     inputErrorClass: 'error__active', 
     errorClass: 'popup__input_form-error' 
-  });
+  };

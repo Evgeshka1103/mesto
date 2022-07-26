@@ -73,7 +73,11 @@ function handleSubmit(evt) {
     renderCard({ name: placeInput.value, link: linkInput.value });
     evt.target.reset();
 
-  closePopups(popupNewPlace);
+    const inputList = Array.from(formNewPlace.querySelectorAll('.popup__input')); 
+    const buttonElement = formNewPlace.querySelector('.popup__button'); 
+      toggleButtonState(inputList, buttonElement, settings); 
+
+closePopups(popupNewPlace);
 }
 formNewPlace.addEventListener('submit', handleSubmit);
 
