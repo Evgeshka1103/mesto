@@ -132,7 +132,13 @@ function handleLike(evt) {
     evt.target.classList.toggle('elements__like_active');
 }
 
-buttonPlace.addEventListener('click', () => openPopups(popupNewPlace));
+buttonPlace.addEventListener('click', () => {openPopups(popupNewPlace)
+const inputList = Array.from(formNewPlace.querySelectorAll('.popup__input')); 
+    const buttonElement = formNewPlace.querySelector('.popup__button'); 
+      toggleButtonState(inputList, buttonElement, settings);
+});
+ 
+
 
 
 popupButtonCloseList.forEach((evt) => {

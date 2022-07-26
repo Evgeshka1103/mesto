@@ -54,7 +54,7 @@ const showInputError = (formElement, inputElement, errorMessage, settings) => {
     formList.forEach((formElement) => { 
       setEventListeners(formElement, settings); 
     }); 
-  }; 
+  };
 
   const settings = { 
     formSelector: '.popup__form', 
@@ -64,3 +64,5 @@ const showInputError = (formElement, inputElement, errorMessage, settings) => {
     inputErrorClass: 'error__active', 
     errorClass: 'popup__input_form-error' 
   };
+  
+  enableValidation(settings);
