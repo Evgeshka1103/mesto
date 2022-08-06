@@ -185,3 +185,5 @@ newPlaceValidator.enableValidation();
 
 const editProfileValidator = new FormValidator(validationData, popupProfile);//валидатор формы профиля
 editProfileValidator.enableValidation();
+
+/*renderCard();*/
