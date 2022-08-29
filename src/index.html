@@ -6,21 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mesto</title>
-   <link rel="stylesheet" href="./pages/index.css">
+   <!--<link rel="stylesheet" href="./pages/index.css">-->
     <meta name="author" content="Евгения Соловьева">
 </head>
 
 <body class="page">
 
     <header class="header">
-        <img class="header__logo" src="./images/logo.svg" alt="Логотип">
+        <img class="header__logo" src="<%=require('./images/logo.svg')%>" alt="Логотип">
     </header>
 
     <main>
 
         <section class="profile">
             <div class="profile__user">
-                <img class="profile__avatar" src="./images/avatar.jpg" alt="Аватар пользователя">
+                <img class="profile__avatar" src="<%=require('./images/avatar.jpg')%>" alt="Аватар пользователя">
                 <div class="profile__info">
                     <h1 class="profile__info-name">Жак-Ив Кусто</h1>
                     <button type="button" class="profile__edit-button" title="Редактировать"></button>
@@ -54,14 +54,14 @@
                 <div class="popup__field">
                     <input type="text" id="input-name"
                         class="popup__input popup__input_form-name popup__input_form-error" placeholder="Имя"
-                        value="Жак-Ив Кусто" name="name" minlength="2" maxlength="40" required>
+                        value="" name="name" minlength="2" maxlength="40" required>
                     <span id="input-name-error" class="error"></span>
                 </div>
 
                 <div class="popup__field">
                     <input type="text" id='input-about'
                         class="popup__input popup__input_form-about popup__input_form-error" placeholder="О себе"
-                        value="Исследователь океана" name="about" minlength="2" maxlength="200" required>
+                        value="" name="about" minlength="2" maxlength="200" required>
                     <span id="input-about-error" class="error"></span>
                 </div>
                 <button class="popup__button" type="submit">Сохранить</button>
@@ -80,7 +80,7 @@
                 <div class="popup__field">
                     <input type="text" id="input-place"
                         class="popup__input popup__input_form-name popup__input_form-error" placeholder="Название"
-                        name="new-place" minlength="2" maxlength="30" required>
+                        name="name" minlength="2" maxlength="30" required>
                     <span id="input-place-error" class="error"></span>
                 </div>
 
@@ -107,7 +107,7 @@
     <template class="template">
 
         <div class="elements__card">
-            <img class="elements__mask-group" src=" ">
+            <img class="elements__mask-group" src="">
             <div class="elements__text">
                 <h2 class="elements__sight"></h2>
                 <button class="elements__like"></button>
@@ -117,8 +117,7 @@
 
     </template>
 
-    <script type="module" src="./pages/index.js"></script>
-
+    <!--<script type="module" src="./pages/index.js"></script>-->
 </body>
 
 </html>
