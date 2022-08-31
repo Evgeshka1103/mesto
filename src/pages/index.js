@@ -22,7 +22,7 @@ import {
 const defaultCardList = new Section({
   items: initialCards, 
   renderer: (item) => {
-    generateCard(item);
+    /*generateCard(item);*/
     return generateCard(item).render();
   }
 }, '.elements');
@@ -43,7 +43,7 @@ popupPreview.setEventListeners();
 
 //создать новую карточку
 const popupPlace = new PopupWithForm('.popup_new-place', (data) => {
-  generateCard(data);
+  /*generateCard(data);*/
 
   const newCard = generateCard(data).render();
   defaultCardList.setItem(newCard);
@@ -61,7 +61,7 @@ const userInput = new UserInfo({
 
 // попап профиля
 const popupUser = new PopupWithForm('.popup_profile', () => {
-    userInput.setUserInfo({
+  userInput.setUserInfo({
       name: nameInput.value,
       about: jobInput.value
     });
@@ -71,14 +71,23 @@ const popupUser = new PopupWithForm('.popup_profile', () => {
 
 popupUser.setEventListeners();
 
+/*const popupUser = new PopupWithForm({
+  popupSelector: '.popup_profile',
+  handleFormSubmit: (data) => {
+  userInput.setUserInfo(data);
+  popupUser.close();
+  }
+  });
+
+popupUser.setEventListeners();*/
+
 //редактируем профиль
 function openProfile(){
-  popupUser.open();
-
   const profileData = userInput.getUserInfo();
   nameInput.value = profileData.name;
   jobInput.value = profileData.about;
-  
+
+  popupUser.open();
   editProfileValidator.clearError(); 
 }
 
