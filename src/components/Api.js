@@ -14,7 +14,6 @@ export default class Api {
       return Promise.reject({message: "Ошибка"}, response);
    }
 
-
    //Загрузка информации о пользователе с сервера
    getUserInfo() {
       return fetch(`${this._baseUrl}/users/me`, {
