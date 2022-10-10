@@ -79,7 +79,7 @@ function renderCard(data, userId) {
    const card = new Card({
       data,
       handleCardClick: () => {
-         popupPreview.open(data.name, data.link);
+         popupPreview.open(data.link, data.name);
       }
    },
       '.template',
