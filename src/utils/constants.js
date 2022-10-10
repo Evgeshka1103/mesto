@@ -1,16 +1,18 @@
 //Кнопки открытия попапов 
 export const profileEditButton = document.querySelector('.profile__edit-button'); //откр попап профиля 
 export const buttonPlace = document.querySelector('.profile__button'); //откр попап карточки
+export const buttonAvatar = document.querySelector('.profile__avatar-edit');//открыть попап аватара
 //Кнопки попапа 
 export const popupButtonCloseList = document.querySelectorAll('.popup__button-close'); //закрыть попап 
-export const popupButton = document.querySelectorAll('.popup__button');//сохранить(создать)
+//export const popupButton = document.querySelectorAll('.popup__button');//сохранить(создать)
 
 //Попап 
 export const popups = document.querySelectorAll('.popup');
 export const popupProfile = document.querySelector('.popup_profile');  //профиль 
 export const popupNewPlace = document.querySelector('.popup_new-place');  //карточка 
-export const popupPhotoTemplate = document.querySelector('.popup_photo-template'); //предварительный просмотр изображения 
-
+export const popupPhotoTemplate = document.querySelector('.popup_photo-template'); //предварительный просмотр изображения
+export const popupAvatarEdit = document.querySelector('.popup_avatar');//попап сменить аватар
+export const popupConfirmation = document.querySelector('.popup_confirm');//попап удалить карточку
 //Формы 
 export const formProfile = document.querySelector('.popup__form_profile'); //для профиля 
 export const formNewPlace = document.querySelector('.popup__form_new-place'); //для создания карточки 
