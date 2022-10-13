@@ -20,7 +20,7 @@ export default class Card {
       return cardElement;
    }
 
-   numberLikes(likes) {
+   numbersLikes(likes) {
       this._likeCount = likes.length;
       this._numberLike.textContent = this._likeCount;
    }
@@ -49,7 +49,8 @@ export default class Card {
       if (this._cardOwner === this._userId) {
          this._enableDelete();
       }
-   }
+   }; 
+   
 
    _setEventListeners() {
       //открываем попап 
@@ -87,8 +88,8 @@ export default class Card {
       this._deleteButton.classList.add('elements__delete-active');
       this._deleteButton.removeAttribute('disabled');
 
-      /*this._deleteButton.addEventListener('click', () => {
-         this._handleCardDelete(this._cardId, this)// удаляем карточку
-      });*/
+      this._deleteButton.addEventListener('click', () => {
+         this._handleCardDelete(this._cardId, this)
+      });
    }
 }

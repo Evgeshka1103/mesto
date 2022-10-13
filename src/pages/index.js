@@ -41,7 +41,7 @@ popupPreview.setEventListeners();
 //карточки из массива 
 const defaultCardList = new Section({
    renderer: (item, id) => {
-      const newCardElement = renderCard(item, id);
+      const newCardElement = createCard(item, id);
       defaultCardList.setItem(newCardElement);
    }
 }, '.elements');
@@ -53,7 +53,7 @@ function toggleLike(card, cardId, isLiked) {
       .deleteLike(cardId)
          .then(res => {
             card.toggleLike(false);
-            card.numberLikes(res.likes);
+            card.numbersLikes(res.likes);
          })
          .catch(function(err) {
             console.log("Ошибка", err);
@@ -62,7 +62,7 @@ function toggleLike(card, cardId, isLiked) {
       api.addLike(cardId)
          .then(res => {
             card.toggleLike(true);
-            card.numberLikes(res.likes);
+            card.numbersLikes(res.likes);
          })
          .catch(function(err) {
             console.log("Ошибка", err);
@@ -93,9 +93,9 @@ function patchUserInfo(data) {
    userInput.setUserInfo(data.name, data.about);
 }
 
-function renderCard(data, userId) {
+function createCard(data, userId) {
 
-   const isLiked = (data.likes.find(element => element._id === userId))
+   const isLiked = (data.likes.some(element => element._id === userId))
       ? true
       : false;
 
@@ -124,7 +124,7 @@ const popupPlace = new PopupWithForm({
       api
          .postUserCardData(data.name, data.link)
          .then(res => {
-            const newCard = renderCard(res, res.owner._id);
+            const newCard = createCard(res, res.owner._id);
             defaultCardList.setItem(newCard);
             popupPlace.close();
          })
@@ -143,8 +143,8 @@ const popupDelete = new PopupWithConfirmation({
    handleFormSubmit: (id, card) => {
       api
          .deleteCard(id)
-         .then(res => {
-            card.handleDelete(res);
+         .then(() => {
+            card.handleDelete();
             popupDelete.close();
          })
          .catch(function(err) {
