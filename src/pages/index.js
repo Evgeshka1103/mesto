@@ -22,6 +22,7 @@ import {
    validationData
 
 } from '../utils/constants.js';
+//import { isAbsoluteURL } from 'webpack-dev-server';
 
 const api = new Api({
    baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-51',
@@ -53,7 +54,7 @@ function toggleLike(card, cardId, isLiked) {
       .deleteLike(cardId)
          .then(res => {
             card.toggleLike(false);
-            card.numbersLikes(res.likes);
+            card.setLikesNumber(res.likes);
          })
          .catch(function(err) {
             console.log("Ошибка", err);
@@ -62,7 +63,7 @@ function toggleLike(card, cardId, isLiked) {
       api.addLike(cardId)
          .then(res => {
             card.toggleLike(true);
-            card.numbersLikes(res.likes);
+            card.setLikesNumber(res.likes);
          })
          .catch(function(err) {
             console.log("Ошибка", err);
@@ -120,6 +121,8 @@ function createCard(data, userId) {
 const popupPlace = new PopupWithForm({
    popupSelector: '.popup_new-place',
    handleFormSubmit: (data) => {
+ console.log(data);
+      
       popupPlace.renderButtonLoading(true);
       api
          .postUserCardData(data.name, data.link)
@@ -141,6 +144,7 @@ popupPlace.setEventListeners();
 const popupDelete = new PopupWithConfirmation({
    popupSelector: '.popup_confirm',
    handleFormSubmit: (id, card) => {
+      
       api
          .deleteCard(id)
          .then(() => {
