@@ -51,25 +51,27 @@ const defaultCardList = new Section({
 function toggleLike(card, cardId, isLiked) {
    if (isLiked) {
       api
-      .deleteLike(cardId)
-         .then(res => {
-            card.toggleLike(false);
+         .deleteLike(cardId)
+         .then((res) => {
+            
             card.setLikesNumber(res.likes);
          })
-         .catch(function(err) {
+         .catch(function (err) {
             console.log("Ошибка", err);
          });
    } else {
       api.addLike(cardId)
-         .then(res => {
-            card.toggleLike(true);
+         .then((res) => {
+            
             card.setLikesNumber(res.likes);
          })
-         .catch(function(err) {
+         .catch(function (err) {
             console.log("Ошибка", err);
          });
    }
 }
+
+
 
 // попап профиля 
 const popupUser = new PopupWithForm({
@@ -82,7 +84,7 @@ const popupUser = new PopupWithForm({
             patchUserInfo(res);
             popupUser.close();
          })
-         .catch(function(err) {
+         .catch(function (err) {
             console.log("Ошибка", err);
          })
          .finally(() => popupPlace.renderButtonLoading(false))
@@ -96,9 +98,9 @@ function patchUserInfo(data) {
 
 function createCard(data, userId) {
 
-   const isLiked = (data.likes.some(element => element._id === userId))
+   /*const isLiked = (data.likes.some(element => element._id === userId))
       ? true
-      : false;
+      : false;*/
 
    const card = new Card({
       data,
@@ -113,7 +115,7 @@ function createCard(data, userId) {
    );
 
    const addCard = card.generateCard();
-   card.toggleLike(isLiked);
+   //card.toggleLike(isLiked);
    return addCard;
 }
 
@@ -121,8 +123,8 @@ function createCard(data, userId) {
 const popupPlace = new PopupWithForm({
    popupSelector: '.popup_new-place',
    handleFormSubmit: (data) => {
- console.log(data);
-      
+      console.log(data);
+
       popupPlace.renderButtonLoading(true);
       api
          .postUserCardData(data.name, data.link)
@@ -131,7 +133,7 @@ const popupPlace = new PopupWithForm({
             defaultCardList.setItem(newCard);
             popupPlace.close();
          })
-         .catch(function(err) {
+         .catch(function (err) {
             console.log("Ошибка", err);
          })
          .finally(() => popupPlace.renderButtonLoading(false))
@@ -144,14 +146,14 @@ popupPlace.setEventListeners();
 const popupDelete = new PopupWithConfirmation({
    popupSelector: '.popup_confirm',
    handleFormSubmit: (id, card) => {
-      
+
       api
          .deleteCard(id)
          .then(() => {
             card.handleDelete();
             popupDelete.close();
          })
-         .catch(function(err) {
+         .catch(function (err) {
             console.log("Ошибка", err);
          });
    }
@@ -173,7 +175,7 @@ const popupAvatar = new PopupWithForm({
             patchUserAvatar(res);
             popupAvatar.close();
          })
-         .catch(function(err) {
+         .catch(function (err) {
             console.log("Ошибка", err);
          })
          .finally(() => popupAvatar.renderButtonLoading(false));
@@ -216,7 +218,7 @@ function renderPage() {
          userId = userData._id;
          defaultCardList.renderItems(defaultCards.reverse(), userId);
       })
-      .catch(function(err) {
+      .catch(function (err) {
          console.log("Ошибка", err);
       });
 }

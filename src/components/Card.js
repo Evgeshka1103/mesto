@@ -1,9 +1,12 @@
+import { data } from "autoprefixer";
+
 export default class Card {
 
    constructor({ data, handleCardClick }, templateSelector, handleCardDelete, handleLikeClick, userId) {
 
       this._title = data.name;
       this._image = data.link;
+      this._likes = data.likes;
       this._likeCount = data.likes.length;
       this._cardId = data._id;
       this._cardOwner = data.owner._id;
@@ -12,6 +15,7 @@ export default class Card {
       this._templateSelector = templateSelector;
       this._handleLikeClick = handleLikeClick;
       this._handleCardDelete = handleCardDelete;
+     
    }
 
    _getTemplate() {
@@ -20,9 +24,27 @@ export default class Card {
       return cardElement;
    }
 
+   isLiked() {
+      return this._likes.some((element) => element._id === this._userId);
+      }
+
    setLikesNumber(likes) {
-      this._likeCount = likes.length;
+
+      this._likes = likes;
+      this._toggleLike();
+   }
+
+   _toggleLike() {
       this._numberLike.textContent = this._likeCount;
+      const isLiked = this.isLiked();
+      
+      if (isLiked) {
+         this._likeButton.classList.add('elements__like_active');
+         
+      } else {
+         this._likeButton.classList.remove('elements__like_active');
+         
+      }
    }
 
    generateCard() {
@@ -42,7 +64,7 @@ export default class Card {
 
       this._setEventListeners();
 
-      //this.toggleLike(isLiked);
+      this._toggleLike();
 
       return this._element;
    }
@@ -60,27 +82,8 @@ export default class Card {
 
       //лайкаем  
       this._likeButton.addEventListener('click', () => {
-         this._handleLikeClick(this, this._cardId, this._isLiked)
+         this._handleLikeClick(this, this._cardId, this._likes)
       });
-   }
-
-   /*isLiked(){
-      return this._isLiked.some(element => {
-      return  element._id === this._userId;
-   })
-}*/
-
-toggleLike(isLiked) {
-   //this._numberLike.textContent = this._likeCount;
-   //this._likeButton.classList.toggle('elements__like_active');
-
-      if (isLiked){
-         this._likeButton.classList.add('elements__like_active');
-         this._isLiked = true;
-      } else {
-         this._likeButton.classList.remove('elements__like_active');
-         this._isLiked = false;
-      }
    }
 
    _checkOwner() {
