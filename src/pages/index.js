@@ -98,10 +98,6 @@ function patchUserInfo(data) {
 
 function createCard(data, userId) {
 
-   /*const isLiked = (data.likes.some(element => element._id === userId))
-      ? true
-      : false;*/
-
    const card = new Card({
       data,
       handleCardClick: () => {
@@ -115,7 +111,6 @@ function createCard(data, userId) {
    );
 
    const addCard = card.generateCard();
-   //card.toggleLike(isLiked);
    return addCard;
 }
 

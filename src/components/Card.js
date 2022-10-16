@@ -29,22 +29,19 @@ export default class Card {
       }
 
    setLikesNumber(likes) {
-
       this._likes = likes;
       this._toggleLike();
    }
 
    _toggleLike() {
-      this._numberLike.textContent = this._likeCount;
+      this._numberLike.textContent = this._likes.length;
       const isLiked = this.isLiked();
       
       if (isLiked) {
          this._likeButton.classList.add('elements__like_active');
-         
-      } else {
+         } else {
          this._likeButton.classList.remove('elements__like_active');
-         
-      }
+         }
    }
 
    generateCard() {
@@ -82,7 +79,7 @@ export default class Card {
 
       //лайкаем  
       this._likeButton.addEventListener('click', () => {
-         this._handleLikeClick(this, this._cardId, this._likes)
+         this._handleLikeClick(this, this._cardId, this.isLiked())
       });
    }
 
